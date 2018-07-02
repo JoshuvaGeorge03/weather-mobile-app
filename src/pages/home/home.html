@@ -1,14 +1,46 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Weather details
     </ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="search()">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col>
+        {{weather.latitude}}
+        {{weather.longitude}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            Alerts
+          </ion-card-header>
+          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<!--
+<ion-content padding>
+  <ion-item>
+  <ion-label floating>serach term enter</ion-label>
+  <ion-input #term (keyup)="searchTerm(term.value)" [(ngModel)]="serach" type="text">
+  </ion-input>
+</ion-item>
+  <ul>
+    <li *ngFor="let items of item">{{item}}</li>
+  </ul>
+</ion-content>
+-->
